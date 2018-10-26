@@ -43,13 +43,34 @@ def _expand_path(notebook_path):
 
 
 class NBToolz(object):
-    def __init__(self, *notebooks, debug=False):
+    def __init__(self, debug=False):
         super().__init__()
         _setup_logger(debug=debug)
         self._logger = logging.getLogger(__name__)
-
-        self._notebooks = list(chain(*map(_expand_path, notebooks)))
         self._functions_list = []
+
+    def read(self, *notebooks):
+        """ Read from the files specified
+
+        Accepts wildcard arguments such as *.ipynb
+        Args:
+            *notebooks: One or more notebooks
+
+        Returns:
+            NBToolz
+        """
+        self._notebooks = list(chain(*map(_expand_path, notebooks)))
+        return self
+
+    def read_stdin(self):
+        """ Set it to read from stdin
+        Mainly meant to be used with git filters
+
+        Returns:
+            NBToolz
+        """
+        self._notebooks = [sys.stdin]
+        return self
 
     def strip_output(self, strip_tag="stripout"):
         """Strip the output of tagged cells

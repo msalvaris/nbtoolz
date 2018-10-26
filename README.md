@@ -20,12 +20,12 @@ writes the result of the transformations to the file specified.
 In the example below we will strip out cells tagged with strip_out tag and replace Team B with <YOUR_TEAM> and print 
 out the results to the terminal.
 ```bash
-nbtoolz test.ipynb strip_output strip_out replace "Team B" "<YOUR_TEAM>" print
+nbtoolz read test.ipynb - strip_output strip_out replace "Team B" "<YOUR_TEAM>" print
 ```
 
 The default tag for strip_output is strip_out so the following does the same.
 ```bash
-nbtoolz test.ipynb strip_output - replace "Team B" "<YOUR_TEAM>" print
+nbtoolz read test.ipynb - strip_output - replace "Team B" "<YOUR_TEAM>" print
 ```
 
 To tag a cell simply select tags in the cell output menu   
@@ -36,22 +36,22 @@ and add the tag in the text box above the cell
 
 We can also chain more methods
 ```bash
-nbtoolz test.ipynb strip_output - replace "Team B" "<YOUR_TEAM>" replace "TEAM A" "<YOUR_TEAM>" print
+nbtoolz read test.ipynb - strip_output - replace "Team B" "<YOUR_TEAM>" replace "TEAM A" "<YOUR_TEAM>" print
 ```
 
 To write the output to the file simply run write at the end
 ```bash
-nbtoolz test.ipynb strip_output - replace "Team B" "<YOUR_TEAM>" replace "TEAM A" "<YOUR_TEAM>" write out.ipynb
+nbtoolz read test.ipynb - strip_output - replace "Team B" "<YOUR_TEAM>" replace "TEAM A" "<YOUR_TEAM>" write out.ipynb
 ```
 
 It also accepts a list of files
 ```bash
-nbtoolz test.ipynb test2.iynb strip_output - replace "Team B" "<YOUR_TEAM>" replace "TEAM A" "<YOUR_TEAM>" write out.ipynb out2.ipynb
+nbtoolz read test.ipynb test2.iynb - strip_output - replace "Team B" "<YOUR_TEAM>" replace "TEAM A" "<YOUR_TEAM>" write out.ipynb out2.ipynb
 ```
 
 or wildcards
 ```bash
-nbtoolz *.ipynb strip_output - replace "Team B" "<YOUR_TEAM>" replace "TEAM A" "<YOUR_TEAM>" write
+nbtoolz read *.ipynb - strip_output - replace "Team B" "<YOUR_TEAM>" replace "TEAM A" "<YOUR_TEAM>" write
 ```
 
 # Configure git filter
@@ -62,14 +62,14 @@ Simply create a shell script called nbfilter that accepts a single argument and 
 ```bash
 #!/usr/bin/env bash
 
-nbtoolz  ${1} - strip_output - replace "Team" "<YOUR_SUBSCRIPTION>" replace "Team2" "<YOUR_SUBSCRIPTION>" print
+nbtoolz  read-stdin strip_output - replace "Team" "<YOUR_SUBSCRIPTION>" replace "Team2" "<YOUR_SUBSCRIPTION>" print
 
 ```
 
 Then you can either edit the .git/config file and add the following
 ```text
 [filter "nbclean"]
-    clean = /home/mat/repos/nbtoolz/nbfilter
+    clean = nbfilter
     smudge = cat
 ```
 
