@@ -7,7 +7,7 @@ except ImportError:
 
 
 # Package meta-data.
-NAME = "nbtoolz"
+NAME = "nbtlz"
 DESCRIPTION = "A set of handy utilities for Jupyter notebooks"
 URL = ""
 EMAIL = ""
@@ -31,7 +31,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 
 # Load the package's __version__.py module as a dictionary.
 about = {}
-with open(os.path.join(here, "__version__.py")) as f:
+with open(os.path.join(here, NAME, "__version__.py")) as f:
     exec(f.read(), about)
 
 
@@ -44,7 +44,7 @@ setup(
     author_email=EMAIL,
     description=DESCRIPTION,
     long_description=long_description,
-    scripts=["nbtoolz"],
+    scripts=["nbtlz/nbtlz"],
     packages=find_packages(),
     include_package_data=True,
     install_requires=requirements,
