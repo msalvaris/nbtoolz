@@ -1,0 +1,6 @@
+toolz>=0.8.2
+pip>=8.1.2
+setuptools
+pypandoc>=1.4
+fire
+nbconvert
