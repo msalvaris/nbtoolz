@@ -7,7 +7,7 @@ except ImportError:
 
 
 # Package meta-data.
-NAME = "nbtlz"
+NAME = "nbtoolz"
 DESCRIPTION = "A set of handy utilities for Jupyter notebooks"
 URL = ""
 EMAIL = ""
