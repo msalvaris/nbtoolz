@@ -7,7 +7,7 @@ It is built using Python Fire so the interface is a little peculiar >:)
 # Installation
 To install you can simply run the following
 ```bash
-pip install git+https://github.com/masalvar/nbtoolz
+pip install git+https://github.com/msalvaris/nbtoolz.git
 ```
 
 It has been tested on Ubuntu but should run on Windows. 
