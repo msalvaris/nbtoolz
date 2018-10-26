@@ -9,7 +9,7 @@ except ImportError:
 # Package meta-data.
 NAME = "nbtoolz"
 DESCRIPTION = "A set of handy utilities for Jupyter notebooks"
-URL = ""
+URL = "https://github.com/msalvaris/nbtoolz"
 EMAIL = ""
 AUTHOR = "Mathew Salvaris"
 LICENSE = ""
