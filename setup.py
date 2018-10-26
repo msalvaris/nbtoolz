@@ -7,7 +7,7 @@ except ImportError:
 
 
 # Package meta-data.
-NAME = "nbtoolz"
+NAME = "nbtlz"
 DESCRIPTION = "A set of handy utilities for Jupyter notebooks"
 URL = ""
 EMAIL = ""
@@ -44,7 +44,7 @@ setup(
     author_email=EMAIL,
     description=DESCRIPTION,
     long_description=long_description,
-    scripts=["nbtoolz/nbtoolz"],
+    scripts=["nbtoolz/nbtlz"],
     packages=find_packages(),
     include_package_data=True,
     install_requires=requirements,
