@@ -62,7 +62,7 @@ Simply create a shell script called nbfilter that accepts a single argument and 
 ```bash
 #!/usr/bin/env bash
 
-nbtoolz  read-stdin strip_output - replace "Team" "<YOUR_SUBSCRIPTION>" replace "Team2" "<YOUR_SUBSCRIPTION>" print
+nbtoolz read-stdin strip_output - replace "Team" "<YOUR_SUBSCRIPTION>" replace "Team2" "<YOUR_SUBSCRIPTION>" print
 
 ```
 
