@@ -44,7 +44,7 @@ setup(
     author_email=EMAIL,
     description=DESCRIPTION,
     long_description=long_description,
-    scripts=["nbtoolz/nbtlz"],
+    scripts=["nbtoolz/nbtoolz"],
     packages=find_packages(),
     include_package_data=True,
     install_requires=requirements,
