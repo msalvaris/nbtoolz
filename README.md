@@ -78,6 +78,7 @@ or run the following commands
 ```bash
 git config filter.nbclean.clean nbfilter
 git config filter.nbclean.smudge cat
+git config filter.nbclean.required true
 ```
 
 then create a .gitattributes file in your project directory and add the following
