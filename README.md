@@ -15,7 +15,7 @@ It has been tested on Ubuntu but should run on Windows.
 # How to Use
 The app offer 4 methods, 2 that alter the context and 2 that are used as the final output. *strip_output* and *replace* 
 alter the contents of the notebook. *print* prints the output of the processing to the terminal and *write*  
-writes the result of the transformations to the file specified.
+writes the result of the transformations to the file specified. Additionally, you can *overwrite*, which simply writes the results back to the input file.
 
 In the example below we will strip out cells tagged with strip_out tag and replace Team B with <YOUR_TEAM> and print 
 out the results to the terminal.
@@ -52,6 +52,11 @@ nbtoolz read test.ipynb test2.iynb - strip_output - replace "Team B" "<YOUR_TEAM
 or wildcards
 ```bash
 nbtoolz read *.ipynb - strip_output - replace "Team B" "<YOUR_TEAM>" replace "TEAM A" "<YOUR_TEAM>" write
+```
+
+You can also overwrite your input file
+```bash
+nbtoolz read test.ipynb - strip_output - replace "Team B" "<YOUR_TEAM>" replace "TEAM A" "<YOUR_TEAM>" overwrite
 ```
 
 # Configure git filter
